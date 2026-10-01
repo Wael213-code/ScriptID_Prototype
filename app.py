@@ -213,7 +213,7 @@ elif operation == "2. Verification (1:1)":
             st.image(
                 report_buf,
                 caption="Verification Report Summary",
-                use_column_width=True,
+                use_container_width=True,
             )
 
             # Add Download Button
