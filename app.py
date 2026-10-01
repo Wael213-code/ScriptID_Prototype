@@ -159,7 +159,7 @@ elif operation == "2. Verification (1:1)":
         )
         if img1_file:
             st.image(
-                img1_file, caption=f"Claimed: {img1_file.name}", use_column_width=True
+                img1_file, caption=f"Claimed: {img1_file.name}", use_container_width=True
             )
 
     with col2:
@@ -169,7 +169,7 @@ elif operation == "2. Verification (1:1)":
         )
         if img2_file:
             st.image(
-                img2_file, caption=f"True: {img2_file.name}", use_column_width=True
+                img2_file, caption=f"True: {img2_file.name}", use_container_width=True
         )
     if st.button("🔍 Run Verification Process", use_container_width=True):
         if not img1_file or not img2_file:
