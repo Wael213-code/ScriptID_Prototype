@@ -130,15 +130,11 @@ elif operation == "2. Verification (1:1)":
         Download an image from trainig database and uplaod it as the true identity and the download an image from testing database and upload as the claimed identity.
         """
     )
-    # Training folder
+    # Refrence base folder
+    # https://drive.google.com/drive/folders/1Xqsn3vzWcvIgv62oW7MBMrdSLkvaLlqw?usp=sharing
+    Ref_base_id = "1Xqsn3vzWcvIgv62oW7MBMrdSLkvaLlqw"
     st.components.v1.iframe(
-        src=f"https://drive.google.com/embeddedfolderview?id={Training_folder_id}#list",
-        height=400,
-        scrolling=True
-    )
-    # Testing folder
-    st.components.v1.iframe(
-        src=f"https://drive.google.com/embeddedfolderview?id={TARGET_FOLDER_ID}#list",
+        src=f"https://drive.google.com/embeddedfolderview?id={Ref_base_id}#list",
         height=400,
         scrolling=True
     )
@@ -153,7 +149,7 @@ elif operation == "2. Verification (1:1)":
     reference_base_id = "11my0jUxZDgDVTGuiWyYXllCNorKIe2G7"
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("Training DB (Claimed)")
+        st.subheader("Claimed identity")
         img1_file = st.file_uploader(
             "Upload Claimed Image", type=["jpg", "png", "bmp"], key="img1"
         )
@@ -163,7 +159,7 @@ elif operation == "2. Verification (1:1)":
             )
 
     with col2:
-        st.subheader("Testing DB (True)")
+        st.subheader("True identity")
         img2_file = st.file_uploader(
             "Upload True Image", type=["jpg", "png", "bmp"], key="img2"
         )
